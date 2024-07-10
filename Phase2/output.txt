@@ -1,0 +1,68 @@
+28    type -> INTEGER_KW
+27    varList -> ID
+26    varList -> varList COMMA ID
+26    varList -> varList COMMA ID
+25    decs -> type varList SEMICOLON
+24    decList -> decs
+23    empty ->
+22    funcList -> empty
+10    expr -> INTEGER_NUMBER
+8     stmt -> ID ASSIGN_OP expr SEMICOLON
+17    stmtList -> stmt
+10    expr -> INTEGER_NUMBER
+8     stmt -> ID ASSIGN_OP expr SEMICOLON
+3     stmtList -> stmtList stmt
+10    expr -> INTEGER_NUMBER
+8     stmt -> ID ASSIGN_OP expr SEMICOLON
+3     stmtList -> stmtList stmt
+11    expr -> ID
+15    relop -> EQ_OP
+10    expr -> INTEGER_NUMBER
+14    expr -> expr relop expr
+13    expr -> FALSE_KW
+4     stmt -> RETURN_KW expr SEMICOLON
+11    expr -> ID
+15    relop -> EQ_OP
+10    expr -> INTEGER_NUMBER
+14    expr -> expr relop expr
+5     expr -> TRUE_KW
+4     stmt -> RETURN_KW expr SEMICOLON
+12    stmt -> IF_KW expr THEN_KW stmt
+21    stmt -> IF_KW expr THEN_KW stmt ELSE_KW stmt
+3     stmtList -> stmtList stmt
+11    expr -> ID
+20    relop -> LE_OP
+11    expr -> ID
+10    expr -> INTEGER_NUMBER
+18    expr -> expr DIV_OP expr
+19    expr -> LEFT_PA expr RIGHT_PA
+14    expr -> expr relop expr
+11    expr -> ID
+11    expr -> ID
+18    expr -> expr DIV_OP expr
+8     stmt -> ID ASSIGN_OP expr SEMICOLON
+17    stmtList -> stmt
+11    expr -> ID
+11    expr -> ID
+16    expr -> expr MUL_OP expr
+15    relop -> EQ_OP
+11    expr -> ID
+14    expr -> expr relop expr
+13    expr -> FALSE_KW
+4     stmt -> RETURN_KW expr SEMICOLON
+12    stmt -> IF_KW expr THEN_KW stmt
+3     stmtList -> stmtList stmt
+11    expr -> ID
+10    expr -> INTEGER_NUMBER
+9     expr -> expr ADD_OP expr
+8     stmt -> ID ASSIGN_OP expr SEMICOLON
+3     stmtList -> stmtList stmt
+2     block -> BEGIN_KW stmtList END_KW
+7     stmt -> block
+6     stmt -> WHILE_KW expr DO_KW stmt
+3     stmtList -> stmtList stmt
+5     expr -> TRUE_KW
+4     stmt -> RETURN_KW expr SEMICOLON
+3     stmtList -> stmtList stmt
+2     block -> BEGIN_KW stmtList END_KW
+1     start -> PROGRAM_KW ID SEMICOLON decList funcList block
